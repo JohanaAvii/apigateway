@@ -29,7 +29,7 @@
       "contact_email": "eljhona_@hotmail.com"
     }
   },
-  "output_encoding": "json",
+  "output_encoding": "no-op",
   "port": 3000,
   "debug_endpoint": true,
   "endpoints": [
@@ -63,7 +63,7 @@
     {
       "endpoint": "/auth/users",
       "method": "GET",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/users",
@@ -87,7 +87,7 @@
     {
       "endpoint": "/auth/users",
       "method": "POST",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/users",
@@ -110,7 +110,7 @@
     {
       "endpoint": "/auth/user/token",
       "method": "GET",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/users/token",
@@ -133,7 +133,7 @@
     {
       "endpoint": "/lambda/link-movie",
       "method": "POST",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/lambda/link-movie",
@@ -156,7 +156,7 @@
     {
       "endpoint": "/request/upload",
       "method": "POST",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/request/upload",
@@ -179,7 +179,7 @@
     {
       "endpoint": "/request/listing",
       "method": "GET",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/request/listing",
@@ -203,7 +203,7 @@
     {
       "endpoint": "/request",
       "method": "POST",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/request",
@@ -226,7 +226,7 @@
     {
       "endpoint": "/request/response",
       "method": "GET",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/request/response",
