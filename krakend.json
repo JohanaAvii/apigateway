@@ -1,0 +1,79 @@
+{
+  "$schema": "https://www.krakend.io/schema/krakend.json",
+  "version": 3,
+  "name": "Marine - API Gateway",
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "extra_config": {
+    "security/cors": {
+      "allow_origins": [
+        "*"
+      ],
+      "expose_headers": [
+        "Content-Length",
+        "authentication",
+        "content-type"
+      ],
+      "max_age": "12h",
+      "allow_methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "DELETE",
+        "CONNECT",
+        "OPTIONS",
+        "TRACE",
+        "PATCH"
+      ],
+      "allow_headers": [
+        "authentication",
+        "content-type"
+      ]
+    },
+    "documentation/openapi": {
+      "version": "1.0",
+      "host": "https://10c8-186-169-58-104.ngrok-free.app",
+      "base_path": "/open-api",
+      "description": "Rutas o endpoints para el api",
+      "contact_name": "Jhonatan",
+      "contact_email": "eljhona_@hotmail.com"
+    }
+  },
+  "output_encoding": "json",
+  "port": 3000,
+  "debug_endpoint": true,
+  "endpoints": [
+    {
+      "endpoint": "/auth/login",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/login",
+          "encoding": "json",
+          "sd": "static",
+          "method": "POST",
+          "host": [
+            "http://auth-backend:9000"
+          ],
+          "disable_host_sanitize": false
+        }
+      ],
+      "extra_config": {
+        "documentation/openapi": {
+          "version": "1.0",
+          "summary": "login",
+          "description": "Endpoint para el login",
+          "example": {
+            "email": "user@corp.com",
+            "password": "somthing"
+          }
+        }
+      },
+      "input_headers": [
+        "*"
+      ]
+    }
+  ]
+}
