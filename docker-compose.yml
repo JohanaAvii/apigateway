@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+  marine:
+    external: true
+
+services:
+  marine-gateway:
+    image: marine-gateway:1.0.0
+    build: .
+    container_name: marine-gateway
+    ports:
+      - 3000:3000
+    restart: on-failure
+    networks:
+      - marine
