@@ -160,7 +160,7 @@
       "backend": [
         {
           "url_pattern": "/request/upload",
-          "encoding": "json",
+          "encoding": "no-op",
           "sd": "static",
           "method": "POST",
           "host": ["http://movie-backend:9000"],
