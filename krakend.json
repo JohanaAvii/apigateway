@@ -6,9 +6,7 @@
   "cache_ttl": "300s",
   "extra_config": {
     "security/cors": {
-      "allow_origins": [
-        "*"
-      ],
+      "allow_origins": ["*"],
       "allow_methods": [
         "GET",
         "POST",
@@ -18,16 +16,8 @@
         "OPTIONS",
         "HEAD"
       ],
-      "expose_headers": [
-        "Content-Length",
-        "Content-Type",
-        "Authorization"
-      ],
-      "allow_headers": [
-        "Authorization",
-        "Accept-Language",
-        "Content-Type"
-      ],
+      "expose_headers": ["Content-Length", "Content-Type", "Authorization"],
+      "allow_headers": ["Authorization", "Accept-Language", "Content-Type"],
       "debug": false
     },
     "documentation/openapi": {
@@ -53,9 +43,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "POST",
-          "host": [
-            "http://auth-backend:9000"
-          ],
+          "host": ["http://auth-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -66,15 +54,11 @@
           "description": "Endpoint para el login",
           "example": {
             "email": "user@corp.com",
-            "password": "somthing"
+            "password": "something"
           }
         }
       },
-      "input_headers": [
-        "Content-Length",
-        "Content-Type",
-        "Authorization"
-      ]
+      "input_headers": ["Content-Length", "Content-Type", "Authorization"]
     },
     {
       "endpoint": "/auth/users",
@@ -86,9 +70,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "GET",
-          "host": [
-            "http://auth-backend:9000"
-          ],
+          "host": ["http://auth-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -96,16 +78,11 @@
         "documentation/openapi": {
           "version": "1.0",
           "summary": "get all users",
-          "description": "Devuelve la lista de usuarios de la aplicacion"
+          "description": "Devuelve la lista de usuarios de la aplicación"
         }
       },
-      "input_headers": [
-        "*"
-      ],
-      "input_query_strings": [
-        "page",
-        "size"
-      ]
+      "input_headers": ["*"],
+      "input_query_strings": ["page", "size"]
     },
     {
       "endpoint": "/auth/users",
@@ -117,9 +94,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "POST",
-          "host": [
-            "http://auth-backend:9000"
-          ],
+          "host": ["http://auth-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -127,12 +102,10 @@
         "documentation/openapi": {
           "version": "1.0",
           "summary": "create user",
-          "description": "Registra un usuario en la aplicacion"
+          "description": "Registra un usuario en la aplicación"
         }
       },
-      "input_headers": [
-        "*"
-      ]
+      "input_headers": ["*"]
     },
     {
       "endpoint": "/auth/users/token",
@@ -144,9 +117,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "GET",
-          "host": [
-            "http://auth-backend:9000"
-          ],
+          "host": ["http://auth-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -157,9 +128,7 @@
           "description": "Valida el token en la verificación de sesión para react"
         }
       },
-      "input_headers": [
-        "*"
-      ]
+      "input_headers": ["*"]
     },
     {
       "endpoint": "/lambda/link-movie",
@@ -171,9 +140,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "POST",
-          "host": [
-            "http://movie-backend:9000"
-          ],
+          "host": ["http://movie-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -181,12 +148,10 @@
         "documentation/openapi": {
           "version": "1.0",
           "summary": "link movie with aws",
-          "description": "Guarda el enlace aws de la pelicula en la base de datos"
+          "description": "Guarda el enlace aws de la película en la base de datos"
         }
       },
-      "input_headers": [
-        "*"
-      ]
+      "input_headers": ["*"]
     },
     {
       "endpoint": "/request/upload",
@@ -198,9 +163,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "POST",
-          "host": [
-            "http://movie-backend:9000"
-          ],
+          "host": ["http://movie-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -211,9 +174,7 @@
           "description": "Carga una película a la solicitud"
         }
       },
-      "input_headers": [
-        "*"
-      ]
+      "input_headers": ["Authorization", "Content-Type"]
     },
     {
       "endpoint": "/request/listing",
@@ -225,9 +186,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "GET",
-          "host": [
-            "http://movie-backend:9000"
-          ],
+          "host": ["http://movie-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -238,13 +197,8 @@
           "description": "Cartelera de películas en la aplicación"
         }
       },
-      "input_query_strings": [
-        "size",
-        "page"
-      ],
-      "input_headers": [
-        "*"
-      ]
+      "input_query_strings": ["size", "page"],
+      "input_headers": ["*"]
     },
     {
       "endpoint": "/request",
@@ -256,9 +210,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "POST",
-          "host": [
-            "http://movie-backend:9000"
-          ],
+          "host": ["http://movie-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -266,12 +218,10 @@
         "documentation/openapi": {
           "version": "1.0",
           "summary": "create request",
-          "description": "Crea una solicitud para una pelicula"
+          "description": "Crea una solicitud para una película"
         }
       },
-      "input_headers": [
-        "*"
-      ]
+      "input_headers": ["*"]
     },
     {
       "endpoint": "/request/response",
@@ -283,9 +233,7 @@
           "encoding": "json",
           "sd": "static",
           "method": "POST",
-          "host": [
-            "http://movie-backend:9000"
-          ],
+          "host": ["http://movie-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
@@ -296,9 +244,7 @@
           "description": "Responder a las solicitudes generadas"
         }
       },
-      "input_headers": [
-        "*"
-      ]
+      "input_headers": ["*"]
     },
     {
       "endpoint": "/request",
@@ -310,19 +256,12 @@
           "encoding": "no-op",
           "sd": "static",
           "method": "GET",
-          "host": [
-            "http://movie-backend:9000"
-          ],
+          "host": ["http://movie-backend:9000"],
           "disable_host_sanitize": false
         }
       ],
-      "input_query_strings": [
-        "page",
-        "size"
-      ],
-      "input_headers": [
-        "*"
-      ]
+      "input_query_strings": ["page", "size"],
+      "input_headers": ["*"]
     }
   ],
   "echo_endpoint": true
