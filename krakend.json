@@ -323,6 +323,26 @@
       "input_headers": [
         "*"
       ]
+    },
+    {
+      "endpoint": "/request/movie/{id}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/request/movie/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://movie-backend:9000"
+          ],
+          "disable_host_sanitize": false
+        }
+      ],
+      "input_headers": [
+        "*"
+      ]
     }
   ],
   "echo_endpoint": true
