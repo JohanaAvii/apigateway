@@ -343,6 +343,26 @@
       "input_headers": [
         "*"
       ]
+    },
+    {
+      "endpoint": "/auth/users/{id}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/users/{id}",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://auth-backend:9000"
+          ],
+          "disable_host_sanitize": false
+        }
+      ],
+      "input_headers": [
+        "*"
+      ]
     }
   ],
   "echo_endpoint": true
