@@ -363,6 +363,26 @@
       "input_headers": [
         "*"
       ]
+    },
+    {
+      "endpoint": "/auth/sign-up",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "url_pattern": "/sign-up",
+          "encoding": "no-op",
+          "sd": "static",
+          "method": "POST",
+          "host": [
+            "http://movie-backend:9000"
+          ],
+          "disable_host_sanitize": false
+        }
+      ],
+      "input_headers": [
+        "*"
+      ]
     }
   ],
   "echo_endpoint": true
